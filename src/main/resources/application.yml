@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: demo-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:cypexa/config-repo.git
+          clone-on-start: true
+          ignore-local-ssh-settings: true
+
+
+  security:
+    user:
+      name: cypexa
+      password: cypexa
+
+
+server:
+  port: 8071

@@ -1,8 +1,19 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${SERVICE_DISCOVERY_HOST:localhost}:${SERVICE_DISCOVERY_PORT:8761}/eureka
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    prefer-ip-address: true
+    hostname: ${spring.application.name}
 spring:
   application:
     name: demo-config-server
   cloud:
     config:
+      uri: http://${CLOUD_CONFIG_HOST:localhost}:${CLOUD_CONFIG_PORT:8072}
+      fail-fast: true
       server:
         git:
           uri: git@github.com:cypexa/config-repo.git
@@ -11,4 +22,4 @@ spring:
 
 
 server:
-  port: 8071
+  port: ${CLOUD_CONFIG_PORT}

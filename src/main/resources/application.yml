@@ -10,11 +10,5 @@ spring:
           ignore-local-ssh-settings: true
 
 
-  security:
-    user:
-      name: cypexa
-      password: cypexa
-
-
 server:
   port: 8071
